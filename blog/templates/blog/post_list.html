@@ -8,10 +8,13 @@
 			<h1><a href="/">Red Penguin Blog</a></h1>
 		</header>
    	
-		<article>
-			<h2>First post</h2>
-			<time>Published February 24th 2021 at 1:45</time>
-			<p>Hi there! Subscribe to <a href="https://youtube.com/redpenguin">Red Penguin</a></p>
-		</article>
+		{% for post in posts %}
+			<hr>
+    		<article>
+        		<h2><a href="">{{ post.title }}</a></h2>
+				<time>Published: {{ post.published_date }}</time>
+        		<p>{{ post.text|linebreaksbr }}</p>
+    		</article>
+{% endfor %}
 	</body>
 </html>
